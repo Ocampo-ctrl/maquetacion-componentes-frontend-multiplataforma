@@ -12,6 +12,27 @@ const preview: Preview = {
       },
     },
   },
+  globalTypes: {
+    theme: {
+      description: 'Tema',
+      toolbar: {
+        title: 'Tema',
+        icon: 'circlehollow',
+        items: ['light', 'dark'],
+        dynamicTitle: true,
+      },
+    },
+  },
+  initialGlobals: { theme: 'light' },
+  decorators: [
+    (story: () => any, context: { globals: { [x: string]: string } }) => {
+      document.documentElement.setAttribute('data-theme', context.globals['theme']);
+      return story();
+    },
+  ],
 };
 
 export default preview;
+
+
+

@@ -1,0 +1,36 @@
+<section class="summary">
+  <h2 class="summary__title">Resumen del pedido</h2>
+
+  @if (items.length === 0) {
+    <p class="summary__empty">Aún no has agregado productos.</p>
+  } @else {
+    <ul class="summary__list">
+      @for (item of items; track item.id) {
+        <li class="item">
+          <div class="item__info">
+            <span class="item__name">{{ item.name }}</span>
+            <span class="item__price">{{ money(item.price * item.qty) }}</span>
+          </div>
+          <div class="qty">
+            <button class="qty__btn" (click)="decrease.emit(item.id)" aria-label="Quitar uno">−</button>
+            <span class="qty__value">{{ item.qty }}</span>
+            <button class="qty__btn" (click)="increase.emit(item.id)" aria-label="Agregar uno">+</button>
+          </div>
+        </li>
+      }
+    </ul>
+
+    <dl class="totals">
+      <div><dt>Subtotal</dt><dd>{{ money(subtotal) }}</dd></div>
+      <div><dt>IVA ({{ ivaRate * 100 }}%)</dt><dd>{{ money(iva) }}</dd></div>
+      <div class="totals__total"><dt>Total</dt><dd>{{ money(total) }}</dd></div>
+    </dl>
+  }
+
+  <app-button
+    label="Confirmar pedido"
+    variant="secondary"
+    [disabled]="items.length === 0"
+    (clicked)="confirm.emit()"
+  />
+</section>

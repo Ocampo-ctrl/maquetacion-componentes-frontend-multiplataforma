@@ -1,0 +1,54 @@
+:root {
+  /* Colores */
+  --color-primary: #E65100;
+  --color-primary-hover: #BF4400;
+  --color-primary-active: #993600;
+  --color-secondary: #2E7D32;
+  --color-secondary-hover: #1B5E20;
+  --color-bg: #FAFAFA;
+  --color-surface: #FFFFFF;
+  --color-border: #E0E0E0;
+  --color-text: #212121;
+  --color-text-muted: #616161;
+  --color-on-primary: #FFFFFF;
+  --color-error: #C62828;
+  --color-warning: #F9A825;
+  --color-success: #2E7D32;
+
+  /* Tipografía */
+  --font-main: 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-size-h1: 2rem;
+  --font-size-h2: 1.5rem;
+  --font-size-h3: 1.25rem;
+  --font-size-body: 1rem;
+  --font-size-label: 0.875rem;
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+
+  /* Espaciados */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-4: 16px;
+  --space-6: 24px;
+
+  /* Otros */
+  --radius: 12px;
+  --touch-target: 48px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme='dark'] {
+  --color-bg: #121212;
+  --color-surface: #1E1E1E;
+  --color-border: #333333;
+  --color-text: #EEEEEE;
+  --color-text-muted: #B0B0B0;
+  --color-primary: #FF7A2F;
+  --color-primary-hover: #FF9455;
+  --color-primary-active: #E65100;
+  --color-on-primary: #121212;
+  --color-secondary: #66BB6A;
+  --color-secondary-hover: #81C784;
+  --color-error: #EF5350;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
